@@ -55,8 +55,9 @@
 // $rem-base: 16px;
 
 // Allows the use of rem-calc() or lower-bound() in your settings
+@import url('https://fonts.googleapis.com/css?family=Merriweather');
+@import url('https://fonts.googleapis.com/css?family=Muli');
 @import "foundation/functions";
-
 // The default font-size is set to 100% of the browser style sheet (usually 16px)
 // for compatibility with browser-based text zoom or user-set defaults.
 
@@ -87,8 +88,8 @@ $include-html-global-classes: $include-html-classes;
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // We use these to define default font stacks
-// $font-family-sans-serif: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-// $font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+// $font-family-sans-serif: "Muli", "Helvetica Neue", Helvetica, sans-serif;
+// $font-family-serif: "Merriweather", Georgia, Cambria, "Times New Roman", Times, serif;
 // $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
 
 // We use these to define default font weights
@@ -115,10 +116,13 @@ $oil         : #333333;
 $jet         : #222222;
 $black       : #000000;
 $headfoot    : #000000;
-$ace-orange  : #E45226;
+$oscar-blue  : #0031e2;
+$oscar-dblue : #002196;
+$oscar-sgreen: #28dcaa;
+
 
 // We use these as default colors throughout
-// $primary-color: #008CBA;
+// $primary-color: #oscar-sgreen;
 // $secondary-color: #e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A
@@ -440,7 +444,7 @@ $ace-orange  : #E45226;
 // $button-font-sml: rem-calc(13);
 // $button-font-med: rem-calc(16);
 // $button-font-lrg: rem-calc(20);
-// $button-font-weight: $font-weight-normal;
+// $button-font-weight: $font-weight-bold;
 // $button-font-align: center;
 
 // We use these to control various hover effects.
@@ -449,7 +453,7 @@ $ace-orange  : #E45226;
 // We use these to control button border and hover styles.
 // $button-border-width: 0px;
 // $button-border-style: solid;
-// $button-bg-color: $primary-color;
+// $button-bg-color: $oscar-sgreen;
 // $button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
 // $button-border-color: $button-bg-hover;
 // $secondary-button-bg-hover: scale-color($secondary-color, $lightness: $button-function-factor);
@@ -686,11 +690,11 @@ $ace-orange  : #E45226;
 
 // We use these to style the icon-bar and items
 // $include-html-icon-bar-classes: $include-html-classes;
-$icon-bar-bg: $headfoot;
+$icon-bar-bg: $oscar-sgreen;
 // $icon-bar-font-color: $white;
 // $icon-bar-font-color-hover: $icon-bar-font-color;
 $icon-bar-font-size: .75rem;
-$icon-bar-hover-color: $ace-orange;
+$icon-bar-hover-color: $oscar-blue;
 // $icon-bar-icon-color: $white;
 // $icon-bar-icon-color-hover: $icon-bar-icon-color;
 // $icon-bar-icon-size: 1.875rem;
@@ -913,7 +917,7 @@ $icon-bar-item-padding: 1rem;
 // $orbit-bullet-hide-for-small: true;
 // $orbit-timer-hide-for-small: true;
 
-// Graceful Loading Wrapper and preloader
+// Loading Wrapper and preloader
 // $wrapper-class: "slideshow-wrapper";
 // $preloader-class: "preloader";
 
@@ -1366,7 +1370,7 @@ $icon-bar-item-padding: 1rem;
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-$topbar-bg-color: $headfoot;
+$topbar-bg-color: $oscar-sgreen;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
@@ -1379,19 +1383,19 @@ $topbar-title-font-size: rem-calc(26);
 
 // Style the top bar dropdown elements
 // $topbar-dropdown-bg: $oil;
-// $topbar-dropdown-link-color: $white;
+// $topbar-dropdown-link-color: $oscar-dblue;
 // $topbar-dropdown-link-bg: $oil;
 // $topbar-dropdown-link-bg-hover: $oil;
 // $topbar-dropdown-link-weight: $font-weight-normal;
 // $topbar-dropdown-toggle-size: 5px;
-// $topbar-dropdown-toggle-color: $white;
+// $topbar-dropdown-toggle-color: $oscar-dblue;
 // $topbar-dropdown-toggle-alpha: 0.4;
 
 // Set the link colors and styles for top-level nav
-// $topbar-link-color: $white;
-// $topbar-link-color-hover: $white;
-// $topbar-link-color-active: $white;
-// $topbar-link-color-active-hover: $white;
+// $topbar-link-color: $oscar-dblue;
+// $topbar-link-color-hover: $oscar-dblue;
+// $topbar-link-color-active: $oscar-dblue;
+// $topbar-link-color-active-hover: $oscar-dblue;
 // $topbar-link-weight: $font-weight-normal;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
@@ -1419,8 +1423,8 @@ $topbar-title-font-size: rem-calc(26);
 // $topbar-menu-link-transform: uppercase;
 // $topbar-menu-link-font-size: rem-calc(13);
 // $topbar-menu-link-weight: $font-weight-bold;
-// $topbar-menu-link-color: $white;
-// $topbar-menu-icon-color: $white;
+// $topbar-menu-link-color: $oscar-dblue;
+// $topbar-menu-icon-color: $oscar-dblue;
 // $topbar-menu-link-color-toggled: $jumbo;
 // $topbar-menu-icon-color-toggled: $jumbo;
 
