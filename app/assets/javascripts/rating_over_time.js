@@ -17,10 +17,10 @@ $(function() {
             lineTension: 0,
             data: yAxisData(data),
             backgroundColor: [
-              'rgba(0, 153, 255, 0.2)'
+              'rgba(97,179,234, 0.2)'
             ],
             borderColor: [
-              'rgba(0, 153, 255, 1)'
+              'rgba(97,179,234, 1)'
             ],
             borderWidth: 1
           }

@@ -141,8 +141,8 @@ $oscar-white : #f9f9f9;
 
 // We use these to control inset shadow shiny edges and depressions.
 // $shiny-edge-size: 0 1px 0;
-// $shiny-edge-color: rgba($oscar-white, .5);
-// $shiny-edge-active-color: rgba($oscar-black, .2);
+// $shiny-edge-color: rgba(249,249,249, .5);
+// $shiny-edge-active-color: rgba(0,24,55, .2);
 
 // d. Media Query Ranges
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -478,7 +478,7 @@ $oscar-white : #f9f9f9;
 // We use these to set the background colors for parts of Clearing.
 // $clearing-bg: $oscar-black;
 // $clearing-caption-bg: $clearing-bg;
-// $clearing-carousel-bg: rgba(51,51,51,0.8);
+// $clearing-carousel-bg: rgba(92, 107, 126, 0.8);
 // $clearing-img-bg: $clearing-bg;
 
 // We use these to style the close button
@@ -498,7 +498,7 @@ $oscar-white : #f9f9f9;
 // $clearing-active-img-height: 85%;
 // $clearing-carousel-height: 120px;
 // $clearing-carousel-thumb-width: 120px;
-// $clearing-carousel-thumb-active-border: 1px solid rgb(255,255,255);
+// $clearing-carousel-thumb-active-border: 1px solid rgb(249,249,249);
 
 // 08. Dropdown
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -619,7 +619,7 @@ $oscar-white : #f9f9f9;
 // $form-label-small-transform: capitalize;
 // $form-label-bottom-margin: 0;
 // $input-font-family: inherit;
-// $input-font-color: rgba(0,0,0,0.75);
+// $input-font-color: rgba(0,24,55,0.75);
 // $input-font-size: rem-calc(14);
 // $input-bg-color: $oscar-white;
 // $input-focus-bg-color: scale-color($oscar-white, $lightness: -2%);
@@ -630,7 +630,7 @@ $oscar-white : #f9f9f9;
 // $input-border-radius: $global-radius;
 // $input-disabled-bg: $oscar-grey2;
 // $input-disabled-cursor: $cursor-default-value;
-// $input-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+// $input-box-shadow: inset 0 1px 2px rgba(0,24,55,0.1);
 
 // We use these to style the fieldset border and spacing.
 // $fieldset-border-style: solid;
@@ -748,7 +748,7 @@ $icon-bar-item-padding: 1rem;
 // $joyride-tip-close-weight: $font-weight-normal;
 
 // When Joyride is filling the screen, we use this style for the bg
-// $joyride-screenfill: rgba(0,0,0,0.5);
+// $joyride-screenfill: rgba(0,24,55,0.5);
 
 // 15. Keystrokes
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -834,7 +834,7 @@ $icon-bar-item-padding: 1rem;
 // $off-canvas-label-border-bottom: none;
 // $off-canvas-label-margin:0;
 // $off-canvas-link-padding: rem-calc(10, 15);
-// $off-canvas-link-color: rgba($oscar-white, 0.7);
+// $off-canvas-link-color: rgba(249,249,249, 0.7);
 // $off-canvas-link-border-bottom: 1px solid scale-color($off-canvas-bg, $lightness: -25%);
 // $off-canvas-back-bg: $oscar-black;
 // $off-canvas-back-border-top: $off-canvas-label-border-top;
@@ -861,9 +861,9 @@ $icon-bar-item-padding: 1rem;
 // Off Canvas Back-Link Overlay
 // $off-canvas-overlay-transition: background 300ms ease;
 // $off-canvas-overlay-cursor: pointer;
-// $off-canvas-overlay-box-shadow: -4px 0 4px rgba($oscar-black, 0.5), 4px 0 4px rgba($oscar-black, 0.5);
-// $off-canvas-overlay-background: rgba($oscar-white, 0.2);
-// $off-canvas-overlay-background-hover: rgba($oscar-white, 0.05);
+// $off-canvas-overlay-box-shadow: -4px 0 4px rgba(0,24,55, 0.5), 4px 0 4px rgba(0,24,55, 0.5);
+// $off-canvas-overlay-background: rgba(249,249,249, 0.2);
+// $off-canvas-overlay-background-hover: rgba(249,249,249, 0.05);
 
 // Transition Variables
 // $menu-slide: "transform 500ms ease";
@@ -875,7 +875,7 @@ $icon-bar-item-padding: 1rem;
 
 // We use these to control the caption styles
 // $orbit-container-bg: none;
-// $orbit-caption-bg: rgba(51,51,51, 0.8);
+// $orbit-caption-bg: rgba(92,107,126, 0.8);
 // $orbit-caption-font-color: $oscar-white;
 // $orbit-caption-font-size: rem-calc(14);
 // $orbit-caption-position: "bottom"; // Supported values: "bottom", "under"
@@ -884,12 +884,12 @@ $icon-bar-item-padding: 1rem;
 
 // We use these to control the left/right nav styles
 // $orbit-nav-bg: transparent;
-// $orbit-nav-bg-hover: rgba(0,0,0,0.3);
+// $orbit-nav-bg-hover: rgba(0,24,55,0.3);
 // $orbit-nav-arrow-color: $oscar-white;
 // $orbit-nav-arrow-color-hover: $oscar-white;
 
 // We use these to control the timer styles
-// $orbit-timer-bg: rgba(255,255,255,0.3);
+// $orbit-timer-bg: rgba(249,249,249,0.3);
 // $orbit-timer-show-progress-bar: true;
 
 // We use these to control the bullet nav styles
@@ -898,7 +898,7 @@ $icon-bar-item-padding: 1rem;
 // $orbit-bullet-radius: rem-calc(9);
 
 // We use these to controls the style of slide numbers
-// $orbit-slide-number-bg: rgba(0,0,0,0);
+// $orbit-slide-number-bg: rgba(0,24,55,0);
 // $orbit-slide-number-font-color: $oscar-white;
 // $orbit-slide-number-padding: rem-calc(5);
 
@@ -1085,7 +1085,7 @@ $icon-bar-item-padding: 1rem;
 // $include-html-reveal-classes: $include-html-classes;
 
 // We use these to control the style of the reveal overlay.
-// $reveal-overlay-bg: rgba($oscar-black, .45);
+// $reveal-overlay-bg: rgba(0,24,55, .45);
 // $reveal-overlay-bg-old: $oscar-black;
 
 // We use these to control the style of the modal itself.
@@ -1094,7 +1094,7 @@ $icon-bar-item-padding: 1rem;
 // $reveal-default-width: 80%;
 // $reveal-max-width: $row-width;
 // $reveal-modal-padding: rem-calc(20);
-// $reveal-box-shadow: 0 0 10px rgba($oscar-black,.4);
+// $reveal-box-shadow: 0 0 10px rgba(0,24,55,.4);
 
 // We use these to style the reveal close button
 // $reveal-close-font-size: rem-calc(40);
@@ -1161,7 +1161,7 @@ $icon-bar-item-padding: 1rem;
 // $split-button-function-factor: 10%;
 // $split-button-pip-color: $oscar-white;
 // $split-button-pip-color-alt: $oscar-black;
-// $split-button-active-bg-tint: rgba(0,0,0,0.1);
+// $split-button-active-bg-tint: rgba(0,24,55,0.1);
 
 // We use these to control tiny split buttons
 // $split-button-padding-tny: $button-pip-tny * 10;
@@ -1320,7 +1320,7 @@ $icon-bar-item-padding: 1rem;
 // $thumb-border-style: solid;
 // $thumb-border-width: 4px;
 // $thumb-border-color: $oscar-white;
-// $thumb-box-shadow: 0 0 0 1px rgba($oscar-black,.2);
+// $thumb-box-shadow: 0 0 0 1px rgba(0,24,55,.2);
 // $thumb-box-shadow-hover: 0 0 6px 1px rgba($primary-color,0.5);
 
 // Radius and transition speed for thumbs
