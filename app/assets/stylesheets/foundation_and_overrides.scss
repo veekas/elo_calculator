@@ -55,8 +55,6 @@
 // $rem-base: 16px;
 
 // Allows the use of rem-calc() or lower-bound() in your settings
-@import url('https://fonts.googleapis.com/css?family=Merriweather');
-@import url('https://fonts.googleapis.com/css?family=Muli');
 @import "foundation/functions";
 // The default font-size is set to 100% of the browser style sheet (usually 16px)
 // for compatibility with browser-based text zoom or user-set defaults.
@@ -112,12 +110,12 @@ $oscar-white : #f9f9f9;
 
 
 // We use these as default colors throughout
-// $primary-color: #oscar-sgreen;
-// $secondary-color: #e7e7e7;
-// $alert-color: #f04124;
-// $success-color: #43AC6A
-// $warning-color: #f08a24;
-// $info-color: #a0d3e8;
+// $primary-color: #4ccead;
+// $secondary-color: #dee1e5;
+// $alert-color: #f86b4f;
+// $success-color: #4ccead;
+// $warning-color: #ffd43f;
+// $info-color: #c1e8f6;
 
 // We use these to control various global styles
 // $body-bg: $oscar-white;
