@@ -42,9 +42,6 @@ gem 'rails_12factor', group: :production
 gem 'turbolinks'
 gem 'kaminari'
 
-# add tournament function (github.com/Gamble715/tourney)
-gem 'tourney'
-
 group :development do
   gem 'quiet_assets'
   gem 'better_errors'
