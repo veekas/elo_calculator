@@ -1,2 +1,2 @@
-# module TournamentsHelper
-# end
+module TournamentsHelper
+end
