@@ -15,6 +15,12 @@
           = link_to "Add Games", new_game_path
         %li.divider
 
+        %li
+          = link_to "TournamentMango", tournaments_path %>
+          # => <a href="http://tournamentmango.com/#!/tournaments/V245TTFJd3hBOFlnMFpFTmhTRU1JYmhqZmtwMg==/Oscar%20Ping%20Pong%20Tournament/-K_jStRSk1xEcwMz2gF-">Tournament</a>
+        %li.divider
+
+        <%= link_to "Profile", user_path(@user) %>
 
 
         %li
