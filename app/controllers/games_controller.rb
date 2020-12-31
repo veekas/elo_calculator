@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-  before_filter :enter_as_match?
+  before_action :enter_as_match?
 
   def index
     @games = Game.includes(:winner, :loser).most_recent.page(params[:page]).per(10)
@@ -44,8 +44,7 @@ class GamesController < ApplicationController
 
   def enter_as_match?
     if params[:match] && different_players
-      matchup = Matchup.create(primary_id: game_params[:winner_id], secondary_id: game_params[:loser_id])
-      redirect_to edit_matchup_path(matchup)
+      redirect_to new_matchup_path(primary_id: game_params[:winner_id], secondary_id: game_params[:loser_id])
     end
   end
 

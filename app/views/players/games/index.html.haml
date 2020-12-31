@@ -1,0 +1,17 @@
+.container
+  = render partial: 'players/profile_topbar', locals: { player: @player }
+  %table{width: '100%'}
+    %caption
+      Games Played (#{@player.games.count})
+    %thead
+      %tr
+        %th
+          Winner
+        %th
+          Loser
+        %th
+          Date
+    %tbody
+      = render @games
+
+  = paginate @games, param_name: 'games_page'

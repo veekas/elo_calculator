@@ -1,22 +1,14 @@
-$(document).on('page:change', function () {
-  $("#tabs").tabs({
-    active: localStorage.getItem("currentTabIndex"),
-    activate: function(event, ui) {
-      localStorage.setItem("currentTabIndex", ui.newTab[0].dataset["tabIndex"]);
-    }
-  });
+$(document).on('turbolinks:load', function() {
+  setDailyRatingChangeArrow();
 });
-
-setDailyRatingChangeArrow();
 
 function setDailyRatingChangeArrow() {
   var ratingChange = parseInt($('.daily-rating-change').text())
 
   if (ratingChange > 0) {
-    $('.rating-arrow').addClass('fi-arrow-up rating-change-up')
+    $('.daily-rating-change').css('border', 'solid green 4px')
   } else if (ratingChange < 0 ){
-    $('.rating-arrow').addClass('fi-arrow-down rating-change-down')
-
+    $('.daily-rating-change').css('border', 'solid red 4px')
   } else {
     //nothing
   }

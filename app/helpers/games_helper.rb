@@ -11,7 +11,11 @@ module GamesHelper
     Game.last.winner_id if Game.last
   end
 
+  def last_loser_id
+    Game.last.loser_id if Game.last
+  end
+
   def optimized_player_list
-    Game.last ? all_players.push(Player.last_loser) : all_players
+    Game.last ? all_players.to_a.push(Player.last_loser) : all_players
   end
 end

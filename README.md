@@ -1,6 +1,3 @@
-[![Stories in Ready](https://badge.waffle.io/erikolsen/elo_calculator.png?label=ready&title=Ready)](https://waffle.io/erikolsen/elo_calculator)
-[![Code Climate](https://codeclimate.com/github/erikolsen/elo_calculator/badges/gpa.svg)](https://codeclimate.com/github/erikolsen/elo_calculator)
-
 # Ping Pong Club
 
 Application allows you to do the following:

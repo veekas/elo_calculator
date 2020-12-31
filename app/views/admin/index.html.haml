@@ -1,0 +1,59 @@
+.row
+  .small-6.columns
+    .section
+      %h3.sectionHeader
+        Match Games
+      .sectionBody
+        %p
+        %p
+          = Game.played_on(Date.current).where.not(matchup_id: nil).count
+  .small-6.columns
+    .section
+      %h3.sectionHeader
+        Non-Match Games
+      .sectionBody
+        %p
+          = Game.played_on(Date.current).where(matchup_id: nil).count
+.row
+  .small-6.columns
+    .section
+      %h3.sectionHeader
+        Last Game
+      .sectionBody
+        = link_to "#{Game.last.winner.name} vs #{Game.last.loser.name}", game_path(Game.last)
+  .small-6.columns
+    .section
+      %h3.sectionHeader
+        Last Match
+      .sectionBody
+        = link_to "#{Matchup.last.primary.name} vs #{Matchup.last.secondary.name}", matchup_path(Matchup.last)
+.row
+  .small-6.columns
+    .section
+      %h3.sectionHeader
+        Game Count
+      .sectionBody
+        %p
+          = Game.count
+  .small-6.columns
+    .section
+      %h3.sectionHeader
+        Match Count
+      .sectionBody
+        %p
+          = Matchup.count
+.row
+  .small-6.columns
+    .section
+      %h3.sectionHeader
+        Player Total
+      .sectionBody
+        %p
+          = Player.count
+  .small-6.columns
+    .section
+      %h3.sectionHeader
+        Matches Today
+      .sectionBody
+        %p
+          = Matchup.where(created_at: Date.current.beginning_of_day..Date.current.end_of_day).count

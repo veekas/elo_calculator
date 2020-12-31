@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.1'
+gem 'rails', '~> 5.2.0'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
@@ -18,14 +18,11 @@ gem 'uglifier', '>= 1.3.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-gem 'foundation-rails', '5.5.2.1'
-gem 'foundation-icons-sass-rails'
-gem 'chart-js-rails', '~> 0.1.0'
+gem 'foundation-rails', '~> 6.4.1.3'
+gem 'chart-js-rails'
+gem 'hamlit'
 
-gem 'haml-rails'
-
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
+gem 'turbolinks'
 
 # For heroku
 gem 'rails_12factor', group: :production
@@ -33,17 +30,22 @@ gem 'rails_12factor', group: :production
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use unicorn as the app server
- gem 'unicorn'
+# Use puma as the app server
+ gem 'puma-heroku'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'turbolinks'
 gem 'kaminari'
 
+# Adds table information to top of model files
+gem 'annotate'
+
+# Reduces boot times through caching; required in config/boot.rb
+gem 'bootsnap', '>= 1.1.0', require: false
+
 group :development do
-  gem 'quiet_assets'
+  #gem 'quiet_assets'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'rack-mini-profiler'
@@ -53,22 +55,27 @@ group :development do
   gem 'flamegraph'
   gem 'stackprof'     # For Ruby MRI 2.1+
   gem 'fast_stack'    # For Ruby MRI 2.0
+  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
+  gem 'web-console', '>= 3.3.0'
+  gem 'listen', '>= 3.0.5', '< 3.2'
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
 group :test, :development do
+  gem 'rails-controller-testing'
   gem 'rspec-rails'
-  gem 'site_prism'
   gem 'pry-byebug'
   gem 'faker'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
 end
 
 group :test do
-  gem 'cucumber-rails', require: false
   gem 'database_cleaner'
-  #gem 'capybara-webkit'
-  #gem 'selenium-webdriver'
+  gem 'capybara'
+  gem 'selenium-webdriver'
   gem 'shoulda-matchers'
 end
 
-ruby '2.2.2'
+ruby '2.5.1'

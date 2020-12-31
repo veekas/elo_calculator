@@ -17,9 +17,7 @@ describe 'Player Profile' do
 
       it 'shows percent won, top played player, game results' do
         within '.rematchLink' do
-          expect(page).to have_content('50%')
-          expect(page).to have_content('Player 1 vs. Player 2')
-          expect(page).to have_content('1 / 1')
+          expect(page).to have_content("#{player1.name} vs. #{player2.name}")
         end
       end
     end
@@ -28,7 +26,9 @@ describe 'Player Profile' do
       let(:tournament_name) { 'Some Tournament' }
       let(:end_date) { 1.week.from_now.to_s }
       let(:tournament_params) { { name: tournament_name,
+                                  series_max: '5',
                                   players: [player1.id, player2.id],
+                                  type: 'RoundRobin',
                                   end_date: end_date } }
 
       before do
@@ -40,7 +40,7 @@ describe 'Player Profile' do
       context 'active tournaments' do
         it 'shows the matchups for the player' do
           visit player_path(player1.id)
-          expect(page).to have_content("#{player1.name} vs #{player2.name}")
+          expect(page).to have_content("#{player1.name} vs. #{player2.name}")
         end
       end
 
@@ -50,6 +50,9 @@ describe 'Player Profile' do
         it 'shows the players results' do
           @tournament.update_column('end_date', past_date)
           visit player_path(player1.id)
+          within '.profile-top-bar' do
+            click_link 'Tournaments'
+          end
           expect(page).to have_content('Final Rank')
         end
       end
@@ -76,6 +79,9 @@ describe 'Player Profile' do
     end
 
     it 'shows players past games' do
+      within '.profile-top-bar' do
+        click_link 'Games'
+      end
       expect(page).to have_content("Games Played (2)")
 
       within "#game-#{game1.id}" do

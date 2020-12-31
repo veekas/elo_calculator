@@ -1,11 +1,17 @@
 class MatchupCreator
   include ActiveModel::Model
+  # {series_max => required_wins}
+  REQUIRED_WINS_PER_SERIES_MAX = { 1 => 1,
+                                   3 => 2,
+                                   5 => 3,
+                                   7 => 4,
+                                   9=> 5 }
 
   attr_reader :game_results, :matchup, :primary_wins, :secondary_wins
 
   def initialize(params)
     @game_results = params[:game_results].values
-    @matchup = Matchup.find params[:matchup]
+    @matchup = Matchup.find params[:matchup_id]
     calculate_wins
   end
 
@@ -16,6 +22,11 @@ class MatchupCreator
       create_game(winner)
     end
     matchup.update winner_id: winner_id
+    if matchup.bracket_matchup
+      matchup.bracket_matchup.update winner_id: winner_id
+      matchup.bracket_matchup.update_children!
+    end
+    true
   end
 
   def create_game(winner)
@@ -55,8 +66,9 @@ class MatchupCreator
   end
 
   def valid_number_of_games
+    winning_number = REQUIRED_WINS_PER_SERIES_MAX[matchup.series_max]
     return false if primary_wins == secondary_wins
-    return false unless primary_wins == 3 || secondary_wins == 3
-    game_results.count <= 5 && game_results.count >= 3
+    return false unless primary_wins == winning_number || secondary_wins == winning_number
+    game_results.count <= matchup.series_max && game_results.count >= winning_number
   end
 end
