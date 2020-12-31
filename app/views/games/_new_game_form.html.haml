@@ -2,10 +2,10 @@
   .row
     .small-10.columns
       = f.label :winner_id do
-        Humble Victor
+        Winner
         = f.collection_select :winner_id, all_players, :id, :name, selected: last_winner_id
       = f.label :loser_id do
-        Graceful Defeated
+        Loser
         = f.collection_select :loser_id, all_players , :id, :name, selected: last_loser_id
     .small-2.columns.vertical-center
       .swapButton{onClick: "swap()"}
