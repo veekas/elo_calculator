@@ -1,16 +1,21 @@
-.icon-bar.five-up#footer.show-for-small-only
-  %a.item{href: games_path, "aria-labelledby" => "#itemlabel1"}
-    %i.fi-arrow-left
-    %label#itemlabel1 Past Games
-  %a.item{href: new_game_path, "aria-labelledby" => "#itemlabel2"}
-    %i.fi-trophy
-    %label#itemlabel2 Add Game
-  %a.item{href: root_path, "aria-labelledby" => "#itemlabel3"}
-    %i.fi-home
-    %label#itemlabel3 Home
-  %a.item{href: tournaments_path, "aria-labelledby" => "#itemlabel4"}
-    %i.fi-torsos-all
-    %label#itemlabel4 Tournaments
-  %a.item{href: new_player_path, "aria-labelledby" => "#itemlabel5"}
-    %i.fi-plus
-    %label#itemlabel5 New Player
+%ul.menu.expanded.icons.icon-top#footer.show-for-small-only{"data-sticky-container" => ""}
+  %li
+    %a{href: games_path}
+      %i.fas.fa-history.fa-lg
+      %span Past Games
+  %li
+    %a{href: new_game_path}
+      %i.fas.fa-table-tennis.fa-lg
+      %span Add Game
+  %li
+    %a{href: root_path}
+      %i.fas.fa-home.fa-lg
+      %span Home
+  %li
+    %a{href: clubs_path}
+      %i.fas.fa-users.fa-lg
+      %span Clubs
+  %li
+    %a{href: tournaments_path}
+      %i.fas.fa-trophy.fa-lg
+      %span Tournaments

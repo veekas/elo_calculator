@@ -1,0 +1,67 @@
+.club-top-row {
+  margin: 1em;
+}
+
+.grid {
+  display: block;
+  background-color: lightblue;
+  height: 25vh;
+  border-radius: 5px;
+  margin: 0.5em;
+  padding: 1em;
+  border: 5px solid $table-blue-dark;
+  //
+  color: $table-blue-dark;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.grid a {
+  color: $table-blue-dark;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.club-name {
+  font-weight: bold;
+  font-size: 1em;
+  line-height: 1em;
+  margin-bottom: 0px;
+}
+
+.member-count {
+  margin-top: 0px;
+  font-weight: bold;
+  font-size: 0.7em;
+}
+.grid:hover a {
+  color: black;
+  background-color: $table-blue-light;
+}
+
+.grid:hover {
+  color: black;
+  background-color: $table-blue-light;
+}
+
+.club-page {
+  padding-bottom: 20vh;
+}
+
+.start-club {
+  padding-left: 0.3em;
+  background-color: white;
+  border: 0.2em solid black;
+  border-radius: 5px;
+  padding: 0.5em;
+  box-shadow: 0.1em 0.1em 0.1em grey;
+  //
+  color: $table-blue-dark;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.start-club:hover {
+  color: black;
+  background-color: lightblue;
+}

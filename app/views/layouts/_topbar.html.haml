@@ -1,19 +1,27 @@
-%div.oscar-blue-bar
-.contain-to-grid
-  %nav.top-bar{"data-topbar" => ""}
-    %ul.title-area
-      %li.name
-        %h1
-          = link_to ELO_APP_NAME, root_path
-    %section.top-bar-section
-      %ul.right
-        %li.divider
+.orange-bar
+.top-bar
+  .top-bar-title
+    %span{"data-responsive-toggle" => "responsive-menu"}
+      %button.menu-icon{"data-toggle" => "", :type => "button"}
+    %strong
+      = link_to ELO_APP_NAME, root_path
+  #responsive-menu
+    .show-for-small-only
+      .hamburger-menu.top-bar-left
+        %ul.menu.vertical.hamburger-hidden
+          %li
+            = link_to "New Club", new_club_path
+          %li
+            = link_to "Sign Up", new_player_path, class: 'orange-drop-box'
+    .show-for-medium.top-bar-right
+      %ul.menu
         %li
-          = link_to "Past Games", games_path
-        %li.divider
+          = link_to "Games", games_path
         %li
-          = link_to "Add Games", new_game_path
-        %li.divider
+          = link_to "Clubs", clubs_path
         %li
-          = link_to "Add Player", new_player_path
-        %li.divider
+          = link_to "Tournaments", tournaments_path
+        %li
+          = link_to "Add Game", new_game_path
+        %li
+          = link_to "Sign Up", new_player_path, class: 'orange-drop-box'

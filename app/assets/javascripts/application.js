@@ -12,14 +12,22 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery-ui/datepicker
-//= require jquery-ui/tabs
+//= require jquery-ui/widgets/datepicker
 //= require foundation
+//= require game_entry
 //= require google_analytics
-//= require turbolinks
 //= require tournaments
 //= require player_profile
-//= require Chart
+//= require Chart.min
+//= require turbolinks
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+$(document).on('turbolinks:load', function() {
+  $(function(){
+    $('.top-bar').foundation();
+    // This is to avoid a flash of unstyled content when
+    // foundation is initialized
+    $('ul').removeClass('hamburger-hidden');
+  });
+});
+

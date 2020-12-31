@@ -1,9 +1,29 @@
+# == Schema Information
+#
+# Table name: games
+#
+#  id            :integer          not null, primary key
+#  winner_rating :integer
+#  loser_rating  :integer
+#  created_at    :datetime
+#  updated_at    :datetime
+#  winner_id     :integer
+#  loser_id      :integer
+#  matchup_id    :integer
+#
+# Indexes
+#
+#  index_games_on_loser_id    (loser_id)
+#  index_games_on_matchup_id  (matchup_id)
+#  index_games_on_winner_id   (winner_id)
+#
+
 require 'csv'
 
-class Game < ActiveRecord::Base
+class Game < ApplicationRecord
   belongs_to :winner, class_name: 'Player'
   belongs_to :loser, class_name: 'Player'
-  belongs_to :matchup
+  belongs_to :matchup, optional: true
 
   validates_presence_of :winner_id, :loser_id, :winner_rating, :loser_rating
 
@@ -17,7 +37,7 @@ class Game < ActiveRecord::Base
     CSV.generate(headers: true) do |csv|
       csv << attributes
 
-      all.each do |game|
+      order(created_at: :asc).each do |game|
         csv << game.attributes.values_at(*attributes)
       end
     end

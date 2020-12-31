@@ -1,22 +1,75 @@
-.div{id: 'tabs'}
-  %ul
-    %li{'data-tab-index'=>'0'}
-      %a{href: '#player-info'}
-        Profile
-    %li{'data-tab-index'=>'1'}
-      %a{href: '#game-info'}
-        Games
-    %li{'data-tab-index'=>'2'}
-      %a{href: '#tournament-info'}
-        Tournaments
-    %li{'data-tab-index'=>'3'}
-      %a{href: '#rating-over-time'}
-        Rating Over Time
-  .div{id: 'player-info'}
-    = render 'player_info'
-  .div{id: 'game-info'}
-    = render 'game_info'
-  .div{id: 'tournament-info'}
-    = render 'tournament_info'
-  .div{id: 'rating-over-time'}
-    = render 'rating_over_time'
+= render partial: 'players/profile_topbar', locals: { player: @player }
+.row.profile-circles
+  .column.small-12
+    .circle.big-circle.float-center
+      %p.center-of-circle-big
+        = @player.rating
+    %p.text-center.player-name
+      = @player.name
+
+.row
+  .column.small-3
+    .circle.little-circle.float-center
+      %p.center-of-circle-little
+        = @stats.average_rating
+    %p.text-center Average
+  .column.small-3
+    .circle.little-circle.float-center
+      %p.center-of-circle-little
+        = @stats.highest_rating_achieved
+    %p.text-center High
+  .column.small-3
+    .circle.little-circle.float-center.daily-rating-change
+      %p.text-center.center-of-circle-little
+        = @stats.daily_rating_change
+    %p.text-center Today
+  .column.small-3
+    .circle.little-circle.float-center
+      %p.center-of-circle-little
+        = number_to_percentage @stats.win_percentage, precision: 0
+    %p.text-center Win Rate
+
+- if @stats.todays_games.count > 0
+  .row
+    .column.small-12
+      %ul.accordion{"data-accordion" => "", "data-slide-speed" => '0', "data-allow-all-closed" => "true"}
+        %li.accordion-item.is-active{"data-accordion-item" => ""}
+          %a.accordion-title{:href => "#"}
+            Today's wins
+            = @stats.games_won_today.count
+            of
+            = @stats.todays_games.count
+          .accordion-content{"data-tab-content" => ""}
+            = render 'daily_games', stats: @stats
+        %li.accordion-item{"data-accordion-item" => ""}
+          %a.accordion-title{:href => "#"} Rating Over Time
+          .accordion-content{"data-tab-content" => ""}
+            = link_to player_ratings_path(@player) do
+              .rating-over-time
+                %canvas#rating-over-time-graph{'data-player-id' => @player.id, 'data-limit' => 10 }
+- else
+  = link_to player_ratings_path(@player) do
+    .rating-over-time
+      %canvas#rating-over-time-graph{'data-player-id' => @player.id, 'data-limit' => 10 }
+
+.row
+  .rematchHeaders
+    .column.small-10
+      %p
+        %strong
+          Play a Rematch
+    .column.small-2
+      %p.text-center
+        %strong
+          Stats
+
+- @stats.opponents_by_games_played.each do |opp|
+  .row
+    .column.small-10
+      = player_and_opponent_link(@player, opp)
+    .column.small-2
+      = link_to player_stats_path(primary: @player, secondary: opp) do
+        %i.fas.fa-chart-bar.fa-sm.button.expanded
+
+:javascript
+  $('.accordion').foundation()

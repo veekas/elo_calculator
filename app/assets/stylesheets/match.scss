@@ -1,0 +1,65 @@
+.col5-unit{
+  @include grid-column(2.4); // (12/5 = 2.4)
+}
+.gameDetails {
+  margin-top: 1em;
+  border: 1px solid #5FDD5F;
+  background: #D8F9D8;
+  padding: .25em;
+}
+
+.gameDetails p {
+  margin-bottom: 0.25em;
+}
+
+.popIt {
+  animation-duration: 2.0s;
+  animation-name: pulse;
+}
+
+@keyframes pulse {
+  50% {
+    background-color: #5FDD5F;
+    border-radius: 5px;
+  }
+}
+
+.undoGame {
+  margin-top: 1em;
+  font-weight: bold;
+}
+
+.swapButton {
+  color: #1779ba;
+  line-height: .75;
+  text-align: center;
+  border: 2px solid #1779ba;
+  padding-top: .5em;
+  padding-bottom: .25em;
+}
+
+.swapButton i {
+  transform: rotate(90deg);
+}
+
+.swapText {
+  font-weight: bold;
+  font-size: .65em;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+input[type=checkbox]:checked + label {
+  background-color: darkgrey;
+}
+
+input[type=radio] {
+  display: none;
+}
+
+input[type=radio]:checked + label {
+  background-color: darkgrey;
+}
+
